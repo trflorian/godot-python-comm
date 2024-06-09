@@ -16,6 +16,14 @@ while True:
     frame = cv2.resize(frame, (400, 300))
     frame = cv2.flip(frame, 1)
 
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR)
+
+    blur = cv2.GaussianBlur(gray, (5, 5), 0)
+
+    canny = cv2.Canny(blur, 20, 50)
+    canny = cv2.cvtColor(canny, cv2.COLOR_GRAY2BGR)
+
     cv2.putText(
         frame,
         f"OpenCV version: {cv2.__version__}",
@@ -26,14 +34,20 @@ while True:
         1,
     )
 
-    _, encoded_frame = cv2.imencode(".jpg", frame)
+    row1 = cv2.hconcat([frame, gray])
+    row2 = cv2.hconcat([blur, canny])
+    image = cv2.vconcat([row1, row2])
 
-    if len(encoded_frame) <= 65507:
-        client_socket.sendto(encoded_frame, (SERVER_IP, SERVER_PORT))
+    image = cv2.resize(image, (400, 300))
+
+    _, encoded_image = cv2.imencode(".jpg", image)
+
+    if len(encoded_image) <= 65507:
+        client_socket.sendto(encoded_image, (SERVER_IP, SERVER_PORT))
     else:
         print("Frame too large, skipping")
 
-    cv2.imshow("frame", frame)
+    cv2.imshow("Image", image)
 
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break
