@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dy5ffdxj6t1tg"]
 
-[ext_resource type="Script" path="res://greeting/greeting.gd" id="1_avgf3"]
+[ext_resource type="Script" uid="uid://cno7gcmvkymld" path="res://greeting/greeting.gd" id="1_avgf3"]
 
 [node name="Greeting" type="Node"]
 

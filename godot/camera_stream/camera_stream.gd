@@ -11,7 +11,7 @@ func _decode_image(frame_data: PackedByteArray) -> Image:
 	image.load_jpg_from_buffer(frame_data)
 	return image
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	server.poll()
 	if server.is_connection_available():
 		var peer = server.take_connection()

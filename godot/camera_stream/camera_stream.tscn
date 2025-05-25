@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dkjodo2hi5yqp"]
 
-[ext_resource type="Script" path="res://camera_stream/camera_stream.gd" id="1_j600m"]
+[ext_resource type="Script" uid="uid://tti6b7mc8te4" path="res://camera_stream/camera_stream.gd" id="1_j600m"]
 
 [node name="CameraStream" type="Control"]
 layout_mode = 3
