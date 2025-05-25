@@ -12,7 +12,7 @@ This project is a simple demonstration of how a python application can communica
 
 ### Camera Stream
 1. Open the Godot project in the `godot/` directory and run the game scene `camera_stream/camera_stream.tscn`.
-2. Install the python requirements for in the `python/` directory by running `pip install -r requirements.txt` from that directory.
+2. Install the python requirements for in the `python/` directory by running `pip install -r requirements.txt` from that directory or using `uv sync`.
 3. From the same folder you can then run the `camera_stream.py` script.
 
 ## Greeting Demo
@@ -30,5 +30,5 @@ https://medium.com/@flip.flo.games/godot-python-3e3f98860e2f
 https://medium.com/@flip.flo.games/godot-python-camera-stream-1866cfb9941f
 
 ## 🖥️ Versions
-- Godot 4.2.2
-- Python 3.11
+- Godot 4.4.1
+- Python 3.13
